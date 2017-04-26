@@ -1,0 +1,17 @@
+{
+  "name": "video_server",
+  "version": "1.0.0",
+  "description": "handles videos and images ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app/app.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "compression": "^1.6.2",
+    "debug": "^2.6.1",
+    "lodash": "^4.17.4"
+  },
+  "author": "tu",
+  "license": "ISC"
+}

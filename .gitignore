@@ -1,0 +1,14 @@
+# Mac files
+*.DS_Store
+
+# log files
+*.log
+
+# npm packs
+*.tgz
+
+# environment files
+.env
+
+# Dependency directories
+node_modules/
