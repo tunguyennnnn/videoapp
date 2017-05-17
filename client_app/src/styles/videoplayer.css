@@ -1,3 +1,20 @@
+.video-item-cover{
+  background: rgba(149, 149, 149, 0.5);
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 .video-duration{
-  color: 'red'
+  color: blue;
+}
+
+.video-title{
+  color: #685206;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
 }

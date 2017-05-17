@@ -1,7 +1,7 @@
 import 'uikit/dist/js/uikit.min.js'
 import 'uikit/dist/js/uikit-icons.js'
-
-
+import './styles/VideoContainer.css'
+import './styles/videoplayer.css'
 import React from 'react'
 import ReactDom from 'react-dom'
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'
