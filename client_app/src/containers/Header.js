@@ -1,16 +1,20 @@
 import React from 'react'
-
+import HeaderInfo from '../components/headerComponents/HeaderInfo'
+import NavigationButton from '../components/headerComponents/NavigationButton'
 export default class Header extends React.Component {
   render () {
+    const navigationList = ['Home', 'Favorite', 'Post'].map((nav, i) => {
+      return <li key={i}><NavigationButton name={nav}/></li>
+    })
+
     return (
-      <div>
-        <nav class="uk-navbar" style={{background: 'black'}}>
-          <ul class="uk-navbar-nav">
-            <li><a href="">Me</a></li>
-            <li><a href="">My loved videos</a></li>
-            <li><a href="">My idols</a></li>
+      <div class='uk-width-1-4 uk-float-left'>
+        <div class='uk-margin-top uk-margin-left'>
+          <HeaderInfo />
+          <ul>
+            {navigationList}
           </ul>
-        </nav>
+        </div>
       </div>
     )
   }
