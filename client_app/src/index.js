@@ -1,5 +1,6 @@
 import 'uikit/dist/js/uikit.min.js'
 import 'uikit/dist/js/uikit-icons.js'
+import 'uikit/dist/css/uikit.min.css'
 import './styles/VideoContainer.css'
 import './styles/videoplayer.css'
 import './styles/app.css'

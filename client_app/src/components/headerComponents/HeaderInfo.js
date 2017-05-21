@@ -2,19 +2,11 @@ import React from 'react'
 
 export default class HeaderInfo extends React.Component {
   render () {
-    const style = {borderTopRightRadius: '5px', borderTopLeftRadius: '5px'}
+    const style = {borderTopRightRadius: '5px', borderTopLeftRadius: '5px', color: 'white'}
     return (
       <div class='menu-component' style={style}>
         <h3>Heyyyy</h3>
-        <p>fbksalfsdka;fnsdl;f;sdafsafsanfs fslfnlsdfnls slfnlsa nflasl an
-        dasdadasdasda
-        dasdasd
-        asd
-        as
-        das
-        dod dasdas
-        dasd
-        a</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
       </div>
     )
   }
