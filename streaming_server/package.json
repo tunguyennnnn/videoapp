@@ -1,0 +1,15 @@
+{
+  "name": "streaming_server",
+  "version": "1.0.0",
+  "description": "stream media data",
+  "main": "streamingServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node streamingServer.js"
+  },
+  "dependencies": {
+    "bluebird": "3.5.0"
+  },
+  "author": "tunguyen",
+  "license": "ISC"
+}
