@@ -7,7 +7,7 @@ export default class VideoPlayer extends React.Component {
     const style = {position: 'relative', width: '100%'}
     const {source, description, socialInfo} = this.props
     return (
-      <div class='uk-width-1-3'>
+      <div class='uk-width-1-3 uk-float-left uk-margin-small-left uk-margin-small-right uk-margin-bottom'>
         <div style={style}>
           <img src={source} />
           <MediaDescription description={description} />

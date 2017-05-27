@@ -21,7 +21,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.0",
-    "font-awesome": "^4.7.0",
+    "react-fontawesome": "^1.6.1",
     "history": "4.6.1",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
@@ -43,7 +43,9 @@
     "style-loader": "^0.14.1",
     "uikit": "^3.0.0-beta.22",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "react-html5video": "2.1.0",
+    "react-jw-player": "^1.5.0"
   },
   "author": "tu nguyen",
   "license": "ISC"

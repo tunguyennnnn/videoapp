@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router'
 const $ = require('jquery')
 
 export default class NavigationButton extends React.Component {
@@ -12,13 +13,15 @@ export default class NavigationButton extends React.Component {
   }
 
   render () {
+    const {name, link} = this.props
     return (
-      <a class='waves-effect waves-red btn-flat menu-component navigation-button'
+      <Link class='waves-effect waves-red btn-flat menu-component navigation-button'
+                to={link}
                 style={{color: 'white'}}
                 onMouseEnter={this.handleMouseEnter.bind(this)}
                 onMouseLeave={this.handleMouseLeave.bind(this)}>
-        {this.props.name}
-      </a>
+        {name}
+      </Link>
     )
   }
 }

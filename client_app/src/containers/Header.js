@@ -8,9 +8,8 @@ export default class Header extends React.Component {
         <div class='uk-margin-top uk-margin-left uk-margin-right'>
           <HeaderInfo />
           <ul>
-            <li><NavigationButton name={'Home'}/></li>
-            <li><NavigationButton name={'Favorite'}/></li>
-            <li><NavigationButton name={'My Post'}/></li>
+            <li><NavigationButton name={'Home'} link={'/'} /></li>
+            <li><NavigationButton name={'My Page'} link={'/myPage'} /></li>
           </ul>
         </div>
       </div>
