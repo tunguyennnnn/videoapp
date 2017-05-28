@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '../containers/Header'
 import MediaContainer from '../containers/MediaContainer'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 
-import { Link } from 'react-router'
 
 export default class Layout extends React.Component {
   render () {

@@ -11,13 +11,15 @@ import ReactDom from 'react-dom'
 import {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-router'
 import FrontPage from './pages/FrontPage'
 import MyPage from './pages/MyPage'
-import Main from './pages/Main'
-
+import {Provider} from 'react-redux'
+import store from './Store'
 
 const app = document.getElementById('app')
 ReactDom.render(
-  <Router history={browserHistory}>
-    <Route path='/' component={FrontPage} />
-    <Route path='/myPage' comonent={MyPage} />
-  </Router>
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path='/' component={FrontPage} />
+      <Route path='/myPage' comonent={MyPage} />
+    </Router>
+  </Provider>
 , app)
