@@ -33,7 +33,7 @@ class MediaContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    media: state.media
+    media: state.filteredMedia
   }
 }
 

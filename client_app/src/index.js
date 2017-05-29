@@ -8,7 +8,7 @@ import './styles/menuComponents.css'
 
 import React from 'react'
 import ReactDom from 'react-dom'
-import {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import FrontPage from './pages/FrontPage'
 import MyPage from './pages/MyPage'
 import {Provider} from 'react-redux'
@@ -19,7 +19,7 @@ ReactDom.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={FrontPage} />
-      <Route path='/myPage' comonent={MyPage} />
+      <Route path='/myPage' component={MyPage} />
     </Router>
   </Provider>
 , app)

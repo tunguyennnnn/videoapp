@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderInfo from '../components/headerComponents/HeaderInfo'
 import NavigationButton from '../components/headerComponents/NavigationButton'
+import UtilityContainer from '../components/headerComponents/UtilityContainer'
 export default class Header extends React.Component {
   render () {
     return (
@@ -11,6 +12,7 @@ export default class Header extends React.Component {
             <li><NavigationButton name={'Home'} link={'/'} /></li>
             <li><NavigationButton name={'My Page'} link={'/myPage'} /></li>
           </ul>
+          <UtilityContainer />
         </div>
       </div>
     )
