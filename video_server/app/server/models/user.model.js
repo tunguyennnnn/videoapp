@@ -2,7 +2,7 @@ const Promise = require('bluebird')
 const mongoose = require('mongoose')
 const _ = require('lodash')
 const Schema = mongoose.Schema
-const validate = require('moongoose-validator')
+const validate = require('mongoose-validator')
 
 const nameValidator = [
   validate({
@@ -61,10 +61,10 @@ const UserSchema = new Schema({
     type: [Schema.Types.ObjectId],
     default: []
   }
-}, {collection: 'User'})
+}, {collection: 'users'})
 
 UserSchema.statics = {
 
 }
 
-module.export = UserSchema
+module.exports = mongoose.model('User', UserSchema)

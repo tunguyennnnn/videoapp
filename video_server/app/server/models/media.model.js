@@ -12,12 +12,13 @@ const MediaSchema = new Schema({
   type: {type: String, default: 'video'},
   authorId: Schema.ObjectId,
   postedDate: {type: Date, default: Date.now}
-}, {collection: 'Media'})
+}, {collection: 'media'})
 
 MediaSchema.statics = {
-  addMedia ({mediaName, authorId, duration, thumbnailPath, type}) {
-
+  getAll ({limit, skip}) {
+    console.log('loggggggggg', limit, skip)
+    return this.find({})
   }
 }
 
-module.export = MediaSchema
+module.exports = mongoose.model('Media', MediaSchema)

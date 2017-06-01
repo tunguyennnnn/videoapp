@@ -29,4 +29,11 @@ const updateUser = (req, res, next) => {
     })
 }
 
-module.exports = {createUser}
+const getAllUsers = (req, res, next) => {
+  User.find({})
+    .then((users) => {
+      res.status(202).json(users)
+    })
+}
+
+module.exports = {createUser, getAllUsers, updateUser}
