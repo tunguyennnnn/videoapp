@@ -11,6 +11,7 @@ import ReactDom from 'react-dom'
 import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import FrontPage from './pages/FrontPage'
 import MyPage from './pages/MyPage'
+import LoginPage from './pages/LoginPage'
 import {Provider} from 'react-redux'
 import store from './Store'
 
@@ -18,8 +19,10 @@ const app = document.getElementById('app')
 ReactDom.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path='/' component={FrontPage} />
-      <Route path='/myPage' component={MyPage} />
+      <Route path = "/" component = {LoginPage}>
+        <Route path='/home' component={FrontPage} />
+        <Route path='/myPage' component={MyPage} />
+      </Route>
     </Router>
   </Provider>
 , app)
