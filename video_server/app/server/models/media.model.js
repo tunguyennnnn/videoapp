@@ -16,8 +16,11 @@ const MediaSchema = new Schema({
 
 MediaSchema.statics = {
   getAll ({limit, skip}) {
-    console.log('loggggggggg', limit, skip)
     return this.find({})
+    .sort({postedDate: -1})
+    .skip(skip)
+    .limit(limit)
+    .exec()
   }
 }
 
