@@ -8,7 +8,7 @@ import './styles/menuComponents.css'
 
 import React from 'react'
 import ReactDom from 'react-dom'
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-router'
 import FrontPage from './pages/FrontPage'
 import MyPage from './pages/MyPage'
 import LoginPage from './pages/LoginPage'
@@ -18,8 +18,8 @@ import store from './Store'
 const app = document.getElementById('app')
 ReactDom.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path = "/" component = {LoginPage}>
+    <Router history={hashHistory}>
+      <Route path="/" component={FrontPage}>
         <Route path='/home' component={FrontPage} />
         <Route path='/myPage' component={MyPage} />
       </Route>

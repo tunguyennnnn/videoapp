@@ -9,12 +9,16 @@ const routes = require('../server/routes/index.route')
 const winstonInstance = require('./winston')
 const config = require('./env')
 const expressValidator = require('express-validator')
-
 const app = express()
 
 if (config.env === 'development') {
   app.use(logger('dev'))
 }
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+})
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

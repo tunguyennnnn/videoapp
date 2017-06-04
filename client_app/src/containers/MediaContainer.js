@@ -19,8 +19,8 @@ class MediaContainer extends React.Component {
       }
     })
   }
-  render () {
 
+  render () {
     return (
       <div id='media-container' class='uk-width-3-4 uk-float-left'>
         <div class='uk-margin-left uk-margin-top uk-margin-right'>
