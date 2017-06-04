@@ -19,4 +19,24 @@ const showAllMedia = (media) => {
   }
 }
 
-export {showImagesOnly, showVideosOnly, showAllMedia}
+const showInfoOnly = (media) => {
+  return {
+    type: 'SHOW_INFO_ONLY',
+    payload: media
+  }
+}
+
+const showMostLove = (media) => {
+  return {
+    type: 'SHOW_MOST_LOVE',
+    payload: media
+  }
+}
+
+const showHottest = (media) => {
+  return {
+    type: 'SHOW_HOTTEST',
+    payload: media
+  }
+}
+export {showImagesOnly, showVideosOnly, showAllMedia, showInfoOnly, showMostLove, showHottest}

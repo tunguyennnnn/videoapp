@@ -27,4 +27,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default MyMediaContainer
+export default connect(mapStateToProps)(MyMediaContainer)

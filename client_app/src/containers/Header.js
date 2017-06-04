@@ -1,9 +1,15 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import FilterButton from '../components/headerComponents/FilterButton'
 import HeaderInfo from '../components/headerComponents/HeaderInfo'
 import NavigationButton from '../components/headerComponents/NavigationButton'
-import UtilityContainer from '../components/headerComponents/UtilityContainer'
-export default class Header extends React.Component {
+import SearchBar from '../components/headerComponents/SearchBar'
+import * as FrontPageActions from '../actions/index'
+
+class Header extends React.Component {
   render () {
+    const {showAllMedia, showVideosOnly, showImagesOnly, showInfoOnly, showMostLove, showHottest, media} = this.props
     return (
       <div class='uk-width-1-4 uk-float-left'>
         <div class='uk-margin-top uk-margin-left uk-margin-right'>
@@ -12,9 +18,30 @@ export default class Header extends React.Component {
             <li><NavigationButton name={'Home'} link={'/'} /></li>
             <li><NavigationButton name={'My Page'} link={'/myPage'} /></li>
           </ul>
-          <UtilityContainer />
+          <ul>
+            <li><SearchBar /></li>
+            <li><FilterButton name={'All'} action={showAllMedia.bind(this, media)} /></li>
+            <li><FilterButton name={'Videos'} action={showImagesOnly.bind(this, media)} /></li>
+            <li><FilterButton name={'Photos'} action={showVideosOnly.bind(this, media)} /></li>
+            <li><FilterButton name={'Info'} action={showInfoOnly.bind(this, media)} /></li>
+            <li><FilterButton name={'Most ❤'} action={showMostLove.bind(this, media)} /></li>
+            <li><FilterButton name={'Hottest'} action={showHottest.bind(this, media)} /></li>
+          </ul>
         </div>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    media: state.media
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    ...FrontPageActions
+  }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

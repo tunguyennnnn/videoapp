@@ -18,11 +18,10 @@ import store from './Store'
 const app = document.getElementById('app')
 ReactDom.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path="/" component={FrontPage}>
-        <Route path='/home' component={FrontPage} />
-        <Route path='/myPage' component={MyPage} />
-      </Route>
+    <Router history={browserHistory}>
+      <Route path="/" component={FrontPage} />
+      <Route path='/login' component={LoginPage} />
+      <Route path='/myPage' component={MyPage} />
     </Router>
   </Provider>
 , app)
