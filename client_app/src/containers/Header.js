@@ -21,8 +21,8 @@ class Header extends React.Component {
           <ul>
             <li><SearchBar /></li>
             <li><FilterButton name={'All'} action={showAllMedia.bind(this, media)} /></li>
-            <li><FilterButton name={'Videos'} action={showImagesOnly.bind(this, media)} /></li>
-            <li><FilterButton name={'Photos'} action={showVideosOnly.bind(this, media)} /></li>
+            <li><FilterButton name={'Videos'} action={showVideosOnly.bind(this, media)} /></li>
+            <li><FilterButton name={'Photos'} action={showImagesOnly.bind(this, media)} /></li>
             <li><FilterButton name={'Info'} action={showInfoOnly.bind(this, media)} /></li>
             <li><FilterButton name={'Most ❤'} action={showMostLove.bind(this, media)} /></li>
             <li><FilterButton name={'Hottest'} action={showHottest.bind(this, media)} /></li>

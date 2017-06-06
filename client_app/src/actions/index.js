@@ -1,21 +1,80 @@
+import MediaFetcher from '../utils/mediaRequest'
+
 const showImagesOnly  = (media) => {
-  return {
-    type: 'SHOW_IMAGES_ONLY',
-    payload: media
+  return (dispatch) => {
+    return MediaFetcher.fetchNewestMedia({media, filter: 'images'}, (success, images) => {
+      if (success) {
+        console.log(3333333)
+        dispatch(requestImagesSuccess(images))
+      } else {
+        dispatch(requestImagesFail())
+      }
+    })
   }
 }
 
-const showVideosOnly = (media) => {
+const requestImagesSuccess = (newImages) => {
   return {
-    type: 'SHOW_VIDEOS_ONLY',
-    payload: media
+    type: 'REQUEST_IMAGES_ONLY_SUCCESS',
+    payload: newImages
   }
 }
+
+const requestImagesFail = () => {
+  return {
+    type: 'REQUEST_IMAGES_ONLY_FAIL'
+  }
+}
+
+const showVideosOnly  = (media) => {
+  return (dispatch) => {
+    return MediaFetcher.fetchNewestMedia({media, filter: 'videos'}, (success, videos) => {
+      if (success) {
+        dispatch(requestVideosSuccess(videos))
+      } else {
+        dispatch(requestVideosFail())
+      }
+    })
+  }
+}
+
+const requestVideosSuccess = (newVideos) => {
+  return {
+    type: 'REQUEST_VIDEOS_ONLY_SUCCESS',
+    payload: newImages
+  }
+}
+
+const requestVideosFail = () => {
+  return {
+    type: 'REQUEST_VIDEOS_ONLY_FAIL'
+  }
+}
+
 
 const showAllMedia = (media) => {
+  return (dispatch) => {
+    return MediaFetcher.fetchNewestMedia({media, filter: 'all'}, (success, newMedia) => {
+      if (success) {
+        return dispatch(requestAllSuccess(newMedia))
+      }
+      else {
+        return dispatch(requestAllFailed())
+      }
+    })
+  }
+}
+
+const requestAllSuccess = (media) => {
   return {
-    type: 'SHOW_ALL_MEDIA',
+    type: 'REQUEST_ALL_MEDIA_SUCCESS',
     payload: media
+  }
+}
+
+const requestAllFailed = () => {
+  return {
+    type: 'REQUEST_ALL_MEDIA_FAIL'
   }
 }
 
