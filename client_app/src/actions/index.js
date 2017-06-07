@@ -4,7 +4,6 @@ const showImagesOnly  = (media) => {
   return (dispatch) => {
     return MediaFetcher.fetchNewestMedia({media, filter: 'images'}, (success, images) => {
       if (success) {
-        console.log(3333333)
         dispatch(requestImagesSuccess(images))
       } else {
         dispatch(requestImagesFail())
@@ -41,7 +40,7 @@ const showVideosOnly  = (media) => {
 const requestVideosSuccess = (newVideos) => {
   return {
     type: 'REQUEST_VIDEOS_ONLY_SUCCESS',
-    payload: newImages
+    payload: newVideos
   }
 }
 

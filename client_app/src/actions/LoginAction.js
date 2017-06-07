@@ -4,7 +4,6 @@ const loginNormal = (user) => {
   return (dispatch) => {
     return auth.loginNormal(user, (success, detail) => {
       if (success) {
-        console.log(detail)
         const {accessToken} = detail
         localStorage.setItem('auth', JSON.stringify({email: user.email, accessToken}))
         dispatch(loginSuccess())

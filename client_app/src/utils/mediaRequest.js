@@ -12,8 +12,7 @@ class MediaFetcher {
       params: {limit, skip, filter}
     })
     .then((newMedia) => {
-      console.log(newMedia)
-      callback(true, newMedia)
+      callback(true, newMedia.data)
     })
     .catch((err) => {
       callback(false)

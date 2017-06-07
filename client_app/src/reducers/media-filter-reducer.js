@@ -38,33 +38,32 @@ let media = [
 ]
 
 export default function (state=media, action) {
-  console.log(action.type)
   switch (action.type) {
     case 'REQUEST_IMAGES_ONLY_SUCCESS': {
-      state = _.concat(action.payload, state)
-      return state.filter((me) => me.type === 'image')
+      media = _.concat(action.payload, media)
+      return media.filter((me) => me.type === 'image')
       break
     }
     case 'REQUEST_IMAGES_ONLY_FAIL': {
-      return state.filter((me) => me.type === 'image')
+      return media.filter((me) => me.type === 'image')
       break
     }
     case 'REQUEST_VIDEOS_ONLY_SUCCESS': {
-      state = _.concat(action.payload, state)
-      return state.filter((me) => me.type === 'video')
+      media = _.concat(action.payload, media)
+      return media.filter((me) => me.type === 'video')
       break
     }
     case 'REQUEST_VIDEOS_ONLY_FAIL': {
-      return state.filter((me) => me.type === 'video')
+      return media.filter((me) => me.type === 'video')
       break
     }
     case 'REQUEST_ALL_MEDIA_SUCCESS': {
-      state = _.concat(action.payload, state)
-      return state
+      media = _.concat(action.payload, media)
+      return media
       break
     }
     case 'REQUEST_ALL_MEDIA_FAIL': {
-      return state
+      return media
       break
     }
     case 'SHOW_INFO_ONLY': {
