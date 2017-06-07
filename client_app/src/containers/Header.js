@@ -8,6 +8,10 @@ import SearchBar from '../components/headerComponents/SearchBar'
 import * as FrontPageActions from '../actions/index'
 
 class Header extends React.Component {
+  componentDidMount () {
+    this.props.showAllMedia()
+  }
+  
   render () {
     const {showAllMedia, showVideosOnly, showImagesOnly, showInfoOnly, showMostLove, showHottest, media} = this.props
     return (
