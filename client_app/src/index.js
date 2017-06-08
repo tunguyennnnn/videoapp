@@ -18,8 +18,8 @@ import store from './Store'
 const app = document.getElementById('app')
 ReactDom.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={FrontPage} />
+    <Router history={hashHistory}>
+      <Route path='/' component={FrontPage}></Route>
       <Route path='/login' component={LoginPage} />
       <Route path='/myPage' component={MyPage} />
     </Router>

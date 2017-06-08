@@ -4,8 +4,6 @@ const loginNormal = (user) => {
   return (dispatch) => {
     return auth.loginNormal(user, (success, detail) => {
       if (success) {
-        const {accessToken} = detail
-        localStorage.setItem('auth', JSON.stringify({email: user.email, accessToken}))
         dispatch(loginSuccess())
       }
       else {
@@ -41,4 +39,4 @@ const loginAuth0 = (user) => {
   }
 }
 
-export {loginNormal, signUp, loginAuth0, loginSuccess}
+export {loginNormal, signUp, loginAuth0, loginSuccess, loginFail}

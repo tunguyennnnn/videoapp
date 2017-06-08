@@ -11,12 +11,12 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN_SUCCESS': {
-      hashHistory.push('/home')
+      hashHistory.push('/')
       return localStorage.getItem('auth')
       break
     }
     case 'LOGIN_FAILED': {
-      browserHistory.push('/')
+      hashHistory.push('/login')
       return state
       break
     }

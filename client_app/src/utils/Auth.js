@@ -30,11 +30,10 @@ class Auth {
   }
 
   setSession (authResult) {
-    let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime())
+    console.log(authResult)
+    let expiresAt = JSON.stringify((authResult.expiresAt * 1000) + new Date().getTime())
     localStorage.setItem('access_token', authResult.accessToken)
-    localStorage.setItem('id_token', authResult.idToken)
     localStorage.setItem('expires_at', expiresAt)
-    history.replace('/home')
   }
 
   logout () {
@@ -64,8 +63,9 @@ class Auth {
         data: {email, password}
       })
       .then((res) => {
-        //this.setSession(res)
-        callback(true, res)
+        console.log(res)
+        this.setSession(res.data)
+        callback(true)
       })
       .catch((err) => {
         console.log(err)
@@ -101,4 +101,5 @@ class Auth {
 }
 
 const auth = new Auth
+window.auth = auth
 export default auth

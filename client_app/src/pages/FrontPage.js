@@ -1,7 +1,15 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import FrontPageContainer from '../containers/FrontPageContainer'
-
-export default class Layout extends React.Component {
+import {loginFail} from '../actions/LoginAction'
+import Auth from '../utils/Auth'
+class FrontPage extends React.Component {
+  componentWillMount () {
+    if (!Auth.isAuthenticated()) {
+      this.props.loginFail()
+    }
+  }
   render () {
     return (
       <div >
@@ -10,3 +18,10 @@ export default class Layout extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    loginFail
+  }, dispatch)
+}
+export default connect(null, mapDispatchToProps)(FrontPage)
