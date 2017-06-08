@@ -10,8 +10,13 @@ const login = (req, res, next) => {
     .then((user) => {
       if (user) {
         if (password === user.password) {
-          const token = jwt.sign(user, '---------')
-          res.json({success: true, accessToken: token})
+          const expiresAt = Math.floor(Date.now() / 1000) + (60 * 60 * 24)
+          const {firstName, lastName, email, password} = user
+          const accessToken = jwt.sign({
+            exp: expiresAt,
+            data: {firstName, lastName, email, password}
+          }, 'secret')
+          res.status(200).json({success: true, accessToken, expiresAt})
         } else {
           res.status(400).json({success: false})
         }
