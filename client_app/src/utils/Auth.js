@@ -86,13 +86,15 @@ class Auth {
   }
 
   register ({firstName, lastName, email, password}, callback) {
+    console.log(firstName, lastName, email, password)
     axios({
       method: 'post',
-      url: 'localhost:4000/api/users',
+      url: 'http://localhost:4000/api/users',
       data: {firstName, lastName, email, password}
     })
     .then((res) => {
-      callback(true, res)
+      this.setSession(res.data)
+      callback(true, res.data)
     })
     .catch((err) => {
       callback(false, err)

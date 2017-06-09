@@ -20,6 +20,16 @@ export default (state = initialState, action) => {
       return state
       break
     }
+    case 'SIGNUP_SUCCESS': {
+      hashHistory.push('/')
+      return localStorage.getItem('auth')
+      break
+    }
+    case 'SIGNUP_FAIL': {
+      hashHistory.push('/login')
+      return state
+      break
+    }
   }
   return state
 }
