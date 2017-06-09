@@ -5,7 +5,6 @@ mongoose.Promise = require('bluebird')
 
 const login = (req, res, next) => {
   const {email, password} = req.body
-  console.log('dasdasdas', email, password)
   User.findOne({email})
     .then((user) => {
       if (user) {
