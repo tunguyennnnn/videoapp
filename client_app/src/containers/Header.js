@@ -11,11 +11,11 @@ class Header extends React.Component {
   componentDidMount () {
     this.props.showAllMedia()
   }
-  
+
   render () {
     const {showAllMedia, showVideosOnly, showImagesOnly, showInfoOnly, showMostLove, showHottest, media} = this.props
     return (
-      <div class='uk-width-1-4 uk-float-left'>
+      <div class='col s3'>
         <div class='uk-margin-top uk-margin-left uk-margin-right'>
           <HeaderInfo />
           <ul>

@@ -22,7 +22,7 @@ class MediaContainer extends React.Component {
 
   render () {
     return (
-      <div id='media-container' class='uk-width-3-4 uk-float-left'>
+      <div id='media-container' class='col s9'>
         <div class='uk-margin-left uk-margin-top uk-margin-right'>
           {this.generateMediaList()}
         </div>

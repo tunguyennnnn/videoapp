@@ -97,4 +97,10 @@ const showHottest = (media) => {
     payload: media
   }
 }
-export {showImagesOnly, showVideosOnly, showAllMedia, showInfoOnly, showMostLove, showHottest}
+
+const triggerAddMedia = () => {
+  return {
+    type: 'TRIGGER_ADD_MEDIA'
+  }
+}
+export {showImagesOnly, showVideosOnly, showAllMedia, showInfoOnly, showMostLove, showHottest, triggerAddMedia}

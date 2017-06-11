@@ -12,7 +12,7 @@ class FrontPage extends React.Component {
   }
   render () {
     return (
-      <div >
+      <div>
         <FrontPageContainer />
       </div>
     )
