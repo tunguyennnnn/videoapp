@@ -6,6 +6,7 @@ import HeaderInfo from '../components/headerComponents/HeaderInfo'
 import NavigationButton from '../components/headerComponents/NavigationButton'
 import SearchBar from '../components/headerComponents/SearchBar'
 import * as FrontPageActions from '../actions/index'
+import {triggerAddMedia} from '../actions/newMediaAction'
 
 class Header extends React.Component {
   componentDidMount () {
@@ -17,7 +18,7 @@ class Header extends React.Component {
     return (
       <div class='col s3'>
         <div class='uk-margin-top uk-margin-left uk-margin-right'>
-          <HeaderInfo />
+          <HeaderInfo triggerAddMedia={this.props.triggerAddMedia}/>
           <ul>
             <li><NavigationButton name={'Home'} link={'/'} /></li>
             <li><NavigationButton name={'My Page'} link={'/myPage'} /></li>
@@ -45,7 +46,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    ...FrontPageActions
+    ...FrontPageActions,
+    triggerAddMedia
   }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

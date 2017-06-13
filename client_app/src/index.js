@@ -5,6 +5,7 @@ import './styles/VideoContainer.css'
 import './styles/videoplayer.css'
 import './styles/app.css'
 import './styles/menuComponents.css'
+import 'react-dropzone-component/styles/filepicker.css'
 
 import React from 'react'
 import ReactDom from 'react-dom'

@@ -1,6 +1,7 @@
 import React from 'react'
 import MediaContainer from './MediaContainer'
 import Header from './Header'
+import NewMedia from '../components/NewMedia'
 
 export default class FrontPageContainer extends React.Component {
   render () {
@@ -8,6 +9,7 @@ export default class FrontPageContainer extends React.Component {
       <div class='row'>
         <Header />
         <MediaContainer />
+        <NewMedia />
       </div>
     )
   }

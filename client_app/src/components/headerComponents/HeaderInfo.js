@@ -11,7 +11,13 @@ export default class HeaderInfo extends React.Component {
   }
 
   onIconClick (type) {
-    console.log(type)
+    switch (type) {
+      case 'ADD_MEDIA': {
+        console.log(22222)
+        this.props.triggerAddMedia()
+        break
+      }
+    }
   }
 
   render () {
