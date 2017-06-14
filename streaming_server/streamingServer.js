@@ -78,7 +78,9 @@ http.createServer((req, res) => {
       sendImage({req, res, file: `./images/${file}`})
     }
   } else {
-    res.send('Cannot find file')
+    res.sendStatus(500)
   }
 
 }).listen(8888)
+
+module.exports = http

@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const UploadHandler = require('./uploadHandler')
+const UploadRoute = require('./uploadRoute')
 
-router.route('/upload', UploadHandler.upload)
+router.use('/upload', UploadRoute)
 
 module.exports = router
