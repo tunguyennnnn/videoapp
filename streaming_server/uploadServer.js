@@ -1,0 +1,11 @@
+const express = require('express')
+const path = require('path')
+const fs = require('fs')
+const formidable = require('formidable')
+const bodyParser = require('body-parser')
+const routes = require('./handlers/index.route')
+
+const app = express()
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use('/', routes)
