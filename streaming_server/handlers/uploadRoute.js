@@ -5,7 +5,7 @@ const fs = require('fs')
 const router = require('express').Router()
 
 const upload = (req, res, next) => {
-  console.log(req)
+  console.log(req.params)
   const form = new formidable.IncomingForm()
   form.multiples = true
   const {type, id} = req.body

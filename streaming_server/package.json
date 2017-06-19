@@ -5,7 +5,7 @@
   "main": "streamingServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node streamingServer.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@sweet-js/cli": "^3.0.10",
